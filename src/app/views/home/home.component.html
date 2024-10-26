@@ -1,0 +1,70 @@
+<main>
+    <header>
+        <div>
+            <h1>Fipe na Mão</h1>
+        </div>
+        <div>
+            <img src="assets/user.png" alt="" height="50px" width="50px">
+        </div>
+    </header>
+    <section class="campo-selecao">
+        <div class="marcas">
+            <div class="input-marca">
+                <input type="text" placeholder="Digite e selecione a marca" 
+                [(ngModel)]="inputMarca" 
+                (input)="[filtrarMarcas(), varrerInputSeguinte('marca')]" 
+                (click)="[marcaFoiSelecionada = false, varrerInputSeguinte('marca')]">
+            </div>
+            <div class="marcasfiltradas" *ngIf="verificarInputMarca()">
+                <div *ngFor="let marcas of resultInputMarca" 
+                (click)="[carregarModelos(marcas.codigo), confirmarMarcaSelecionada(marcas.nome)]">
+                    {{marcas.nome}}
+                </div>
+            </div>
+        </div>
+    
+        <div class="modelos">
+            <div class="input-modelo">
+                <input type="text" placeholder="Digite e selecione o modelo" 
+                (click)="[conferirInputAnterior('modelo'), modeloFoiSelecionado = false]" 
+                [(ngModel)]="inputModelo" 
+                (input)="[filtrarModelos(), varrerInputSeguinte('modelo')]">
+            </div>
+            <div class="modelosfiltrados" *ngIf="verificarInputModelo()">
+                <div *ngFor="let modelos of resultInputModelo" (click)="[carregarAnos(modelos.codigo), confirmarModeloSelecionado(modelos.nome)]">
+                    {{modelos.nome}}
+                </div>
+            </div>
+        </div>
+    
+        <div class="anos">
+            <div class="input-anos">
+                <input type="text" placeholder="Digite e selecione o ano" 
+                (click)="[conferirInputAnterior('ano'), anoFoiSelecionado = false]"
+                [(ngModel)]="inputAno"
+                (input)="filtrarAnos()">
+            </div>
+            <div class="anosfiltrados" *ngIf="verificarInputAnos()">
+                <div *ngFor="let ano of resultInputAno" (click)="confirmarAnoSelecionado(ano.nome, ano.codigo)">
+                    {{ano.nome}}
+                </div>
+            </div>
+        </div>
+    
+        <div class="buscar">
+            <button type="button" id="btn-buscar" (click)="carregarResultado()">Obter Resultado</button>
+        </div>
+    </section>
+
+    <section class="campo-resultado">
+        <div *ngIf="resultadoObtido">
+            <p>Valor: {{resultadoFipe.Valor}}</p>
+            <p>Marca: {{resultadoFipe.Marca}}</p>
+            <p>Ano do modelo: {{resultadoFipe.AnoModelo}}</p>
+            <p>Combustível: {{resultadoFipe.Combustivel}}</p>
+            <p>Código Fipe: {{resultadoFipe.CodigoFipe}}</p>
+            <p>Mês de referência: {{resultadoFipe.MesReferencia}}</p>
+        </div>
+    </section>
+
+</main>
