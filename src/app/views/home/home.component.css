@@ -1,18 +1,6 @@
-header {
-    display: flex;
-    height: 60px;
-    justify-content: space-between;
-    background-color: #48CFCB;
-    align-items: center;
-}
-h1{
-    color: #424242;
-    padding-left: 10px;
-}
-
 .campo-selecao {
     height: 50vh;
-    width: 100vw;
+    width: 100%;
     background-color: #F5F5F5;
     display: flex;
     flex-direction: column;
@@ -20,7 +8,7 @@ h1{
     align-items: center;
 }
 .campo-resultado{
-    width: 100vw;
+    width: 100%;
     height: calc(100vh - 50vh - 60px);
     background-color: #F5F5F5;
     display: flex;
@@ -83,7 +71,7 @@ button{
     overflow: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .marcas, .modelos, .anos, .marcasfiltradas, .modelosfiltrados, .anosfiltrados{
         width: 80vw;
     }
