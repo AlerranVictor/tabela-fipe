@@ -52,7 +52,7 @@ button{
 }
 .modelosfiltrados{
     position: absolute;
-    background-color: lightgray;
+    background-color: #edecec;
     width: 30vw;
     min-height: 19px;
     height: auto;
@@ -62,7 +62,7 @@ button{
 }
 .anosfiltrados{
     position: absolute;
-    background-color: lightgray;
+    background-color: #edecec;
     width: 30vw;
     min-height: 19px;
     height: auto;
