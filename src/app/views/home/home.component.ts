@@ -1,6 +1,5 @@
   import { Component, OnInit } from '@angular/core';
   import { Marcas } from 'src/app/models/marcas';
-  import { Modelos } from 'src/app/models/modelos';
   import { FipeService } from 'src/app/services/fipe.service';
 
   @Component({
