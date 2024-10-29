@@ -38,9 +38,10 @@ button{
     background-color: #229799;
     height: 27px;
     padding: 4px;
+    cursor: pointer;
 }
 
-.marcasfiltradas{
+.marcasfiltradas, .modelosfiltrados, .anosfiltrados{
     position: absolute;
     background-color: #edecec;
     width: 30vw;
@@ -49,26 +50,7 @@ button{
     max-height: 75px;
     flex-direction: column;
     overflow: auto;
-}
-.modelosfiltrados{
-    position: absolute;
-    background-color: #edecec;
-    width: 30vw;
-    min-height: 19px;
-    height: auto;
-    max-height: 75px;
-    flex-direction: column;
-    overflow: auto;
-}
-.anosfiltrados{
-    position: absolute;
-    background-color: #edecec;
-    width: 30vw;
-    min-height: 19px;
-    height: auto;
-    max-height: 75px;
-    flex-direction: column;
-    overflow: auto;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 1024px) {
